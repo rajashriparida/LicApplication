@@ -1,28 +1,42 @@
 package com.nt.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class PolicyType {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String name;
+	@Column
+	private String pName;
+	@Column
 	private int amount;
+	@Column
 	private int policyTerm;
+	@Column
+	private boolean active;
 
 	public PolicyType() {
 		super();
 	}
 
-	public PolicyType(String name, int amount, int policyTerm) {
+	public PolicyType(String pName, int amount, int policyTerm) {
 		super();
-		this.name = name;
+		this.pName = pName;
 		this.amount = amount;
 		this.policyTerm = policyTerm;
 	}
 
-	public String getName() {
-		return name;
+	public String getPName() {
+		return pName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setPName(String name) {
+		this.pName = name;
 	}
 
 	public int getAmount() {
@@ -41,10 +55,18 @@ public class PolicyType {
 		this.policyTerm = policyTerm;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
-		return "PolicyType [id=" + id + ", name=" + name + ", amount=" + amount + ", policyTerm=" + policyTerm
-				+ ", getName()=" + getName() + ", getAmount()=" + getAmount() + ", getPolicyTerm()=" + getPolicyTerm()
+		return "PolicyType [id=" + id + ", name=" + pName + ", amount=" + amount + ", policyTerm=" + policyTerm
+				+ ", getName()=" + getPName() + ", getAmount()=" + getAmount() + ", getPolicyTerm()=" + getPolicyTerm()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
