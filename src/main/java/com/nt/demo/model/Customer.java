@@ -2,14 +2,29 @@ package com.nt.demo.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Customer {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long Id;
+	@Column
 	private String customerName;
+	@Column
 	private String addressId;
+	@Column
 	private LocalDate dob;
+	@Column
 	private String gender;
+	@Column
 	private int phno;
+	@Column
 	private String emailId;
+	@Column
 	private String password;
 
 	public Customer() {

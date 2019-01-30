@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.nt.demo.model.PolicyType;
 
-public interface PolicyTypeRepository extends JpaRepository<PolicyType,Integer> {
+public interface PolicyTypeRepository extends JpaRepository<PolicyType, Integer> {
+	public PolicyType findAllById(int id);
 
 }

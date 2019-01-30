@@ -20,6 +20,10 @@ public class PolicyType {
 	@Column
 	private boolean active;
 
+	public PolicyType(int id) {
+		this.id = id;
+	}
+
 	public PolicyType() {
 		super();
 	}
