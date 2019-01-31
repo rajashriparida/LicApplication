@@ -3,7 +3,6 @@ package com.nt.demo.dto;
 import java.time.LocalDate;
 
 public class PolicyDto {
-	private Long pId;
 	private LocalDate startDate;
 	private LocalDate renewalDate;
 	private LocalDate endDate;

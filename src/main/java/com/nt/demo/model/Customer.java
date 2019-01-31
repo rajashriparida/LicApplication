@@ -7,21 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class Customer {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long Id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	@Column
 	private String customerName;
 	@Column
-	private String addressId;
+	private Long addressId;
 	@Column
 	private LocalDate dob;
 	@Column
 	private String gender;
 	@Column
-	private int phno;
+	private long phoneNumber;
 	@Column
 	private String emailId;
 	@Column
@@ -31,16 +32,21 @@ public class Customer {
 		super();
 	}
 
-	public Customer(String customerName, String addressId, LocalDate dob, String gender, int phno, String emailId,
-			String password) {
+	public Customer(Long id) {
+		super();
+		this.id = id;
+	}
+
+	public Customer(String customerName, Long addressId, LocalDate dob, String gender, long phoneNumber,
+			String emailId) {
 		super();
 		this.customerName = customerName;
 		this.addressId = addressId;
 		this.dob = dob;
 		this.gender = gender;
-		this.phno = phno;
+		this.phoneNumber = phoneNumber;
 		this.emailId = emailId;
-		this.password = password;
+
 	}
 
 	public String getCustomerName() {
@@ -51,11 +57,11 @@ public class Customer {
 		this.customerName = customerName;
 	}
 
-	public String getAddressId() {
+	public Long getAddressId() {
 		return addressId;
 	}
 
-	public void setAddressId(String addressId) {
+	public void setAddressId(Long addressId) {
 		this.addressId = addressId;
 	}
 
@@ -75,12 +81,12 @@ public class Customer {
 		this.gender = gender;
 	}
 
-	public int getPhno() {
-		return phno;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhno(int phno) {
-		this.phno = phno;
+	public void setPhno(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getEmailId() {
@@ -101,8 +107,9 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [Id=" + Id + ", customerName=" + customerName + ", addressId=" + addressId + ", dob=" + dob
-				+ ", gender=" + gender + ", phno=" + phno + ", emailId=" + emailId + ", password=" + password + "]";
+		return "Customer [Id=" + id + ", customerName=" + customerName + ", addressId=" + addressId + ", dob=" + dob
+				+ ", gender=" + gender + ", phno=" + phoneNumber + ", emailId=" + emailId + ", password=" + password
+				+ "]";
 	}
 
 }

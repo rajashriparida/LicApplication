@@ -1,7 +1,5 @@
 package com.nt.demo.dto;
 
-import javax.persistence.Column;
-
 public class PolicyTypeDto {
 
 	private String pName;

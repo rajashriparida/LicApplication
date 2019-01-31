@@ -25,9 +25,7 @@ public class PolicyTypeAPI {
 
 	@PostMapping()
 	public PolicyType addPolicyType(@RequestBody PolicyTypeDto policyTypeDto) {
-		PolicyType typePolicy = service.addPolicyType(policyTypeDto);
-		return typePolicy;
-
+		return service.addPolicyType(policyTypeDto);
 	}
 
 	@GetMapping("/{id}")

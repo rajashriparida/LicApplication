@@ -10,11 +10,11 @@ import javax.persistence.Id;
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	@Column
 	private int pinCode;
 	@Column
-	private String State;
+	private String state;
 	@Column
 	private String addressDetails;
 	@Column
@@ -29,10 +29,14 @@ public class Address {
 	public Address(int pinCode, String state, String addressDetails, String town, String dist) {
 		super();
 		this.pinCode = pinCode;
-		State = state;
+		this.state = state;
 		this.addressDetails = addressDetails;
 		this.town = town;
 		this.dist = dist;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public int getPinCode() {
@@ -44,11 +48,11 @@ public class Address {
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 
 	public String getAddressDetails() {
@@ -77,7 +81,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", pinCode=" + pinCode + ", State=" + State + ", addressDetails=" + addressDetails
+		return "Address [id=" + id + ", pinCode=" + pinCode + ", State=" + state + ", addressDetails=" + addressDetails
 				+ ", town=" + town + ", dist=" + dist + "]";
 	}
 
